@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* MundialNet Brand Colors - Paleta Oficial */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary: Azul MundialNet (Blue Light #02b0ef) */
+    --primary: 196 98% 47%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 196 98% 57%;
+
+    /* Secondary: Laranja MundialNet (Orange #f39a15) */
+    --secondary: 36 89% 52%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 36 89% 62%;
+
+    /* Blue Dark (#1577bd) - usado nos gradientes */
+    --blue-dark: 204 80% 41%;
+
+    /* Orange Dark - versão mais escura do laranja para gradientes */
+    --orange-dark: 36 89% 42%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 196 98% 47%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 196 98% 47%;
+
+    --radius: 0.75rem;
+
+    /* Gradientes personalizados - Uma cor só (light to dark) */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(196 98% 47%) 0%,
+      hsl(204 80% 41%) 100%
+    );
+    --gradient-secondary: linear-gradient(
+      135deg,
+      hsl(36 89% 52%) 0%,
+      hsl(36 89% 42%) 100%
+    );
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(196 98% 47%) 0%,
+      hsl(196 98% 42%) 50%,
+      hsl(204 80% 41%) 100%
+    );
+
+    /* Sombras com cor */
+    --shadow-primary: 0 10px 40px -10px hsl(196 98% 47% / 0.3);
+    --shadow-secondary: 0 10px 40px -10px hsl(36 89% 52% / 0.3);
+    --shadow-glow: 0 0 40px hsl(196 98% 47% / 0.4);
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 196 98% 47%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 196 98% 57%;
+
+    --secondary: 36 89% 52%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 36 89% 62%;
+
+    --blue-dark: 204 80% 41%;
+    --orange-dark: 36 89% 42%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 196 98% 47%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 196 98% 47%;
+
+    --shadow-primary: 0 10px 40px -10px hsl(196 98% 47% / 0.5);
+    --shadow-secondary: 0 10px 40px -10px hsl(36 89% 52% / 0.5);
+    --shadow-glow: 0 0 40px hsl(196 98% 47% / 0.6);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-primary {
+    box-shadow: var(--shadow-primary);
+  }
+
+  .shadow-secondary {
+    box-shadow: var(--shadow-secondary);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
